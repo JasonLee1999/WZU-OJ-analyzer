@@ -131,8 +131,8 @@ for user_id in users:
         k += 1
         problem = problems[submission.problem_id]
         if problem.trust_time_len >= 5 and submission.submission_time != None:
-            now_minutes = int(submission.submission_time / 60)
-            time_ave = int(problem.time_sum / 60 / problem.trust_time_len)
+            now_minutes = submission.submission_time / 60
+            time_ave = problem.time_sum / 60 / problem.trust_time_len
             if now_minutes > time_ave:
                 delta = 35 - time_ave
                 time_ave += delta
